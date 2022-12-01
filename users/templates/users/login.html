@@ -1,0 +1,21 @@
+{% extends 'aggregators/base.html' %}
+{% load bootstrap5 %}
+
+{% block header %}
+    <div class="container text-center text-muted">
+        <h2><small>Log in to your account.</small></h2>
+    </div>
+{% endblock header %}
+
+{% block content %}
+    <div class="container text-center">
+        <form class="form-signin my-4" action="{% url 'users:login' %}" method="post">
+            {%csrf_token%}
+            {% bootstrap_form form %}
+            <button class="btn btn-primary mt-2" name="submit">Log In</button>
+            <input type='hidden' name='next' value="{% url 'aggregators:index' %}" />
+        </form>
+    </section>
+    
+
+{% endblock content %}

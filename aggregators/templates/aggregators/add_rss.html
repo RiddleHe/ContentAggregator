@@ -1,0 +1,27 @@
+{% extends 'aggregators/base.html' %}
+
+{% block header %}
+
+<div class="text-center" style="  display: -ms-flexbox; display: -webkit-box; display: flex; -ms-flex-align: center; -ms-flex-pack: center; -webkit-box-align: center; align-items: center; -webkit-box-pack: center; justify-content: center; padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <form class="form-signin" style="width: 100%; max-width: 330px; padding: 15px; margin: 0 auto;" action="{% url 'aggregators:add_rss' %}" method="post">
+        {% csrf_token %} 
+        <h1 class="font-weight-normal h3 mb-3">Add your own RSS feed.</h1>
+        <div class="mb-3">
+            <label class="form-label" for="rssFeed" class="sr-only">RSS feed</label>
+            <input class="form-control" name="q1" type="text" id="rssFeed" placeholder="RSS feed" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="websiteName" class="sr-only">Website name</label>
+            <input class="form-control" name="q2" type="text" id="websiteName" placeholder="Website name" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="topic" class="sr-only">Topic</label>
+            <input class="form-control" name="q3" type="text" id="topic" placeholder="Topic" required>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Add</a>
+    </form>
+</div>
+
+
+
+{% endblock header %}
