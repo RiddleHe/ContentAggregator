@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
-from .management.commands.startjobs import feedparser, requests, save_new_article
+from .management.commands.startjobs import feedparser, requests, save_new_article, fetch_new_article
 
 
 
@@ -74,5 +74,9 @@ def add_rss(request):
 
     return render(request, 'aggregators/add_rss.html')
 
-
+@login_required
+def update_rss(request):
+    """Update the rss of all channels"""
+    fetch_new_article()
+    return HttpResponseRedirect(reverse("aggregators:index"))
 

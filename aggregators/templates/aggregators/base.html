@@ -36,7 +36,8 @@
         <header class="blog-header py-4 px-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1">
-                    <a class="text-muted text-decoration-none" href="{% url 'aggregators:add_rss' %}">Add your own feed</a>
+                    <a class="btn btn-sm btn-outline-dark me-3" href="{% url 'aggregators:add_rss' %}">Add feed</a>
+                    <a class="btn btn-sm btn-outline-dark" href="{% url 'aggregators:update_rss' %}">Update feed</a>
                 </div>
                 <div class="col-4 text-center">
                     <a class="blog-header-logo display-6 text-dark text-decoration-none" href="{% url 'aggregators:index' %}"><small>The Bat Cave</small></a>
